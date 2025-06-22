@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Add this new CSS for the animation */
+        @keyframes pulseGrow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulseGrow 1.5s infinite;
+        }
+        
+        #sendMoney {
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 1.5rem; /* Increased from default (typically 1rem) */
+            padding: 15px 30px; /* Larger padding for bigger button */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Send</a>
+        <a href="#">Wallet</a>
+        <a href="#">Activity</a>
+    </div>
+    <div class="container">
+        <div class="balance">
+            <h2>Cash App Balance <i class="fas fa-check-circle verified-tick"></i></h2>
+            <p id="balanceAmount">$78,930,075.23</p>
+            <span>
+                Available balance
+                <i class="fas fa-eye-slash toggle-balance" id="toggleBalance"></i>
+            </span>
+        </div>
+        <div class="send-payment">
+            <h2>Send Payment To:</h2>
+            <input type="text" id="recipient" placeholder="Name, cashtag, @username or email">
+            <h2>Select Currency:</h2>
+            <select id="currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+            <h2>Transfer Amount:</h2>
+            <input type="number" id="amount" placeholder="Enter amount">
+            <button id="sendMoney" class="pulse-animation">Makes Payment</button>
+        </div>
+    </div>
+    <div id="success" class="hidden">
+        <img src="success.png" alt="Payment Success" class="success-image">
+        <h2>You've just sent</h2>
+        <p>Processing wait 20 minutes <span id="successAmount"></span> to <span id="successRecipient"></span></p>
+        <button id="returnBack">Send More</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // You can add this script to control the animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendButton = document.getElementById('sendMoney');
+            
+            // Make the animation more pronounced on hover
+            sendButton.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            sendButton.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

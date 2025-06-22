@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #00e600;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    background-color: white;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-top: 20px;
+}
+
+.balance {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.balance h2 {
+    margin: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.balance p {
+    font-size: 1.7em;
+    margin: 10px 0;
+}
+
+.balance span {
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verified-tick {
+    color: #1DA1F2; /* PayPal's blue color */
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.toggle-balance {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.send-payment h2 {
+    margin: 10px 0 5px;
+}
+
+.send-payment input, .send-payment select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.send-payment button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00e600;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.send-payment button:hover {
+    background-color: #00e600;
+}
+
+#success {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#success h2 {
+    color: #00e600;
+}
+
+.success-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
